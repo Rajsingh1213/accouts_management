@@ -65,22 +65,22 @@ This project is suitable for anyone looking for an efficient financial managemen
 
 ## Project Structure
 myproject/ 
-  ├── accounts/ │ 
-  ├── migrations/ # Database migration files │ 
-  ├── static/accounts/ # Static files (CSS) │ 
-  ├── templates/accounts/ # HTML templates │ 
-  ├── admin.py # Admin panel configuration │ 
-  ├── apps.py # App configuration │ 
-  ├── forms.py # Django forms for user operations │ 
-  ├── models.py # Models (CustomUser, Transaction) │ 
-  ├── urls.py # URLs for accounts app │ 
-  ├── views.py # Views for pages and APIs 
-  ├── myproject/ │ 
-  ├── settings.py # Project settings │ 
-  ├── urls.py # Root URL configuration 
-  ├── db.sqlite3 # SQLite database ├── manage.py # Django management script 
-  ├── requirements.txt # Python dependencies 
-  └── README.md # Project documentation
+ |       ├── accounts/ │ 
+ |       ├── migrations/ # Database migration files │ 
+ |       ├── static/accounts/ # Static files (CSS) │ 
+ |       ├── templates/accounts/ # HTML templates │ 
+ |       ├── admin.py # Admin panel configuration │ 
+ |       ├── apps.py # App configuration │ 
+ |       ├── forms.py # Django forms for user operations │ 
+ |       ├── models.py # Models (CustomUser, Transaction) │ 
+ |       ├── urls.py # URLs for accounts app │ 
+ |       ├── views.py # Views for pages and APIs 
+ ├── myproject/ │ 
+ |        ├── settings.py # Project settings │ 
+ |        ├── urls.py # Root URL configuration 
+ ├── db.sqlite3 # SQLite database ├── manage.py # Django management script 
+ ├── requirements.txt # Python dependencies 
+ └── README.md # Project documentation
 
 **Purpose**: Explain the workflows (e.g., login, transactions, etc.).
 
