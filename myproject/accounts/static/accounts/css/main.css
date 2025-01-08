@@ -21,7 +21,15 @@ body {
 }
 
 .container {
-    background-color: #a79192;
+    height: 70px;
+    background-color: #19e7cfcb;
+    border-radius: 10px;
+}
+.container img {
+   height: 60px;
+   width: 150px;
+   margin-top: 6px;
+   margin-left: 20px;
 }
 
 h1 {
@@ -33,7 +41,7 @@ h1 {
 
 .account-summary, .transactions {
     width: 100%;
-    max-width: 1200px; /* Max width ensures it doesn't become too stretched on large screens */
+    max-width: 1200px; 
     margin: 20px auto;
     padding: 20px;
     background-color: white;
