@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Transaction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/add_transaction.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Heading at the top -->
+        <h1>Add Transaction</h1>
+        
+        <!-- Form in the middle -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Transaction</button>
+        </form>
+        
+        <!-- Back to Dashboard link at the bottom -->
+        <div class="bottom-link">
+            <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>
