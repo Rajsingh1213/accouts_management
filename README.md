@@ -30,6 +30,11 @@ This project is suitable for anyone looking for an efficient financial managemen
 - **API Endpoints**:
   - RESTful APIs for user authentication and transaction management.
  
+### Prerequisites
+- Python 3.12.4
+- Django 5.1.4
+- Virtual Environment (recommended)
+ 
 
 ### Steps
 
