@@ -9,10 +9,13 @@ def register_view(request):
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
+            print("Form is valid")  
             user = form.save(commit=False)
-            user.set_password(form.cleaned_data["password"])
+            user.set_password(form.cleaned_data["password"])  
             user.save()
             return redirect("login")
+        else:
+            print("Form errors:", form.errors)  
     else:
         form = CustomUserCreationForm()
 

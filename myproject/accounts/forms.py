@@ -16,6 +16,7 @@ class CustomUserCreationForm(forms.ModelForm):
 
         if password != confirm_password:
             raise forms.ValidationError("Passwords do not match")
+        return cleaned_data
 
 class CustomUserChangeForm(forms.ModelForm):
     class Meta:
