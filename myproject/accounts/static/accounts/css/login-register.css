@@ -1,6 +1,3 @@
-/* login-register.css */
-
-/* Global body styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -11,7 +8,6 @@ body {
     margin: 0;
 }
 
-/* Container for the form */
 .container {
     width: 100%;
     max-width: 400px;
@@ -22,7 +18,6 @@ body {
     text-align: center;
 }
 
-/* Form title */
 h1 {
     font-size: 28px;
     color: #333333;
@@ -30,7 +25,6 @@ h1 {
     font-weight: 600;
 }
 
-/* Input fields styling */
 .form-group {
     width: 100%;
     margin-bottom: 20px;
@@ -60,7 +54,6 @@ input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Submit button */
 button {
     width: 100%;
     background-color: #007bff;
@@ -78,14 +71,12 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Error message styling */
 .error-message {
     color: red;
     font-size: 14px;
     margin-top: 10px;
 }
 
-/* Link styling */
 p {
     font-size: 14px;
     color: #666666;

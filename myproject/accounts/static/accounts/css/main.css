@@ -40,42 +40,18 @@ h1 {
     color: #333333;
 }
 .account-summary{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  /* justify-items: center; */
-  /* justify-content: center; */
-    /* display: flex;
-    width: 99%;
-    height: 200px; */
-  
-    /* margin: 20px auto;
-    padding: 20px; */
-    /* background-color: white;
-    border-radius: 12px; */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.account-summary h2{
-    /* display: flex; */
-    /* margin-left: 500px;
-    width: 100%; */
-    /* flex-direction: row; */
-}
-.account-summary p{
-    /* display: flex;
-    margin-top: 90px;
+    display: flex;
     flex-direction: column;
     width: 100%;
-    padding-right: 10px; */
-    
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+    
  .transactions {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-   /* margin-right: 60px; */
     margin: 20px auto;
     padding: 20px;
     background-color: white;
@@ -83,21 +59,7 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.t1{
-    /* display: flex;
-    width: 100%;
-   justify-items: center; */
-}
-/* Account summary section */
- /* .transactions h2 {
-    text-align: center;
-    font-size: 24px;
-   display: flex;
-  
-    
-} */
 
-/* Table styling */
 table {
     width: 80%;
     border-collapse: collapse;
@@ -126,7 +88,6 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Dashboard links */
 .dashboard-links {
     text-align: center;
     margin-top: 30px;
