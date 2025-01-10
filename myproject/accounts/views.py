@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.models import Permission, User
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from .forms import CustomUserCreationForm, TransactionForm
 from .models import CustomUser, Transaction
 from django.db.models import Sum
+from django.contrib.contenttypes.models import ContentType
 
 def register_view(request):
     if request.method == "POST":
@@ -54,6 +56,57 @@ def dashboard_view(request):
     return render(request, "accounts/dashboard.html", context)
 
 @login_required
+def add_transaction_view(request):
+    if request.method == "POST":
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            transaction = form.save(commit=False)
+            transaction.user = request.user
+            transaction.save()
+            return redirect("dashboard")
+    else:
+        form = TransactionForm()
+
+    return render(request, "accounts/add_transaction.html", {"form": form})
+
+
+@login_required
+def manage_permissions_view(request):
+    if not request.user.is_superuser:
+        return redirect("dashboard")  # Only superuser can access this page
+
+    # Fetch all users excluding the superuser themselves
+    users = CustomUser.objects.exclude(is_superuser=True)
+
+    # Handle form submission
+    if request.method == "POST":
+        user_id = request.POST.get("user_id")
+        permission_codename = request.POST.get("permission_codename")
+        action = request.POST.get("action")
+
+        # Get user and permission objects
+        user = get_object_or_404(CustomUser, id=user_id)
+        permission = get_object_or_404(Permission, codename=permission_codename)
+
+        if action == "assign":
+            user.user_permissions.add(permission)  # Assign permission
+        elif action == "revoke":
+            user.user_permissions.remove(permission)  # Revoke permission
+
+        return redirect("manage_permissions")  # Redirect back to the permissions page
+
+    # Fetch all permissions
+    permissions = Permission.objects.all()
+
+    return render(
+        request,
+        "accounts/manage_permissions.html",
+        {"users": users, "permissions": permissions},
+    )
+
+
+@login_required
+@permission_required("accounts.add_transaction", raise_exception=True)
 def add_transaction_view(request):
     if request.method == "POST":
         form = TransactionForm(request.POST)

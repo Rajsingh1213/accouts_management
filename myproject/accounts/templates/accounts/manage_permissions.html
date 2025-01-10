@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Permissions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/manage_permissions.css' %}">
+</head>
+<body>
+    <div class="box3">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">
+                <img src="https://sudoerp.in/storage/uploads/logo//logo-dark.png" alt="Sudo techlabs">
+              </a>
+            </div>
+          </nav>
+    </div>
+
+    <h1>Manage Permissions</h1>
+
+    <table border="1"class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Permissions</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>
+                        {% for perm in user.user_permissions.all %}
+                            <span>{{ perm.codename }}</span>
+                        {% empty %}
+                            <span>No permissions</span>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <form method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <select name="permission_codename">
+                                {% for permission in permissions %}
+                                    <option value="{{ permission.codename }}">{{ permission.codename }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <button type="submit" name="action" value="assign">Assign</button>
+                            <button type="submit" name="action" value="revoke">Revoke</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="dashboard" href="{% url 'dashboard' %}">Back to Dashboard</a>
+    
+</body>
+</html>

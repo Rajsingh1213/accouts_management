@@ -34,13 +34,16 @@
 
     <div class="account-summary">
         <h2>Account Summary</h2>
+        <div class="sec">
         <p>Total Income: ₹{{ total_income }}</p>
         <p>Total Expenses: ₹{{ total_expenses }}</p>
         <p>Current Balance: ₹{{ balance }}</p>
+        </div>
     </div>
 
     <div class="transactions">
-        <h2>Transactions</h2>
+        <div class="t1">
+        <h2>Transactions</h2></div>
         <table>
             <tr>
                 <th>Title</th>
@@ -65,6 +68,9 @@
 
     <div class="dashboard-links">
         <a href="{% url 'add_transaction' %}">Add Transaction</a>
+        {% if user.is_superuser %}
+            <a href="{% url 'manage_permissions' %}">Manage Permissions</a>
+        {% endif %}
         <a href="{% url 'logout' %}">Logout</a>
     </div>
 </div>

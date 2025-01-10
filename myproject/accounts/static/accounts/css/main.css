@@ -9,7 +9,7 @@ body {
 #container{
     width: 100%;
     display: flex;
-    flex-direction: row;
+     flex-direction: row; 
 }
 
 .box1{
@@ -17,13 +17,14 @@ body {
 }
 
 .box2{
-    width: 78%;
+    width: 75%;
 }
 
 .container {
     height: 70px;
     background-color: #19e7cfcb;
     border-radius: 10px;
+    
 }
 .container img {
    height: 60px;
@@ -38,10 +39,43 @@ h1 {
     margin-bottom: 20px;
     color: #333333;
 }
-
-.account-summary, .transactions {
+.account-summary{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  /* justify-items: center; */
+  /* justify-content: center; */
+    /* display: flex;
+    width: 99%;
+    height: 200px; */
+  
+    /* margin: 20px auto;
+    padding: 20px; */
+    /* background-color: white;
+    border-radius: 12px; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.account-summary h2{
+    /* display: flex; */
+    /* margin-left: 500px;
+    width: 100%; */
+    /* flex-direction: row; */
+}
+.account-summary p{
+    /* display: flex;
+    margin-top: 90px;
+    flex-direction: column;
     width: 100%;
-    max-width: 1200px; 
+    padding-right: 10px; */
+    
+}
+ .transactions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   /* margin-right: 60px; */
     margin: 20px auto;
     padding: 20px;
     background-color: white;
@@ -49,18 +83,26 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.t1{
+    /* display: flex;
+    width: 100%;
+   justify-items: center; */
+}
 /* Account summary section */
-.account-summary h2, .transactions h2 {
+ /* .transactions h2 {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 20px;
-}
+   display: flex;
+  
+    
+} */
 
 /* Table styling */
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 70px;
+
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
